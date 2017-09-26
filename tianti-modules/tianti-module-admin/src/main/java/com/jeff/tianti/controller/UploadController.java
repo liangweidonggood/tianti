@@ -1,12 +1,6 @@
 package com.jeff.tianti.controller;
 
-import java.io.File;
-import java.io.PrintWriter;
-import java.util.Map;
-import java.util.UUID;
-
-import javax.servlet.http.HttpServletRequest;
-
+import com.jeff.tianti.common.dto.AjaxResult;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,7 +8,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.jeff.tianti.common.dto.AjaxResult;
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.PrintWriter;
+import java.util.Map;
+import java.util.UUID;
 
 /**
  * 文件异步上传Controller
@@ -29,6 +27,7 @@ public class UploadController {
 
 	@RequestMapping("/uploadAttach")
 	public void uploadAttach(HttpServletRequest request, PrintWriter out) {
+		//System.out.print("====================================================");
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
 		MultipartFile multipartFile = null;
@@ -39,6 +38,7 @@ public class UploadController {
 		fileName = this.storeIOc(multipartRequest, multipartFile);
 
 		out.print(fileName);
+		//System.out.print(fileName);
 	}
 
 

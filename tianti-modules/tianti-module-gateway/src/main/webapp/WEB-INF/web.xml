@@ -10,5 +10,7 @@
 	</context-param>
 		
 	<display-name>tianti-module-gateway</display-name>
-	
+	<welcome-file-list>
+		<welcome-file>tianti/index/index.html</welcome-file>
+	</welcome-file-list>
 </web-app>

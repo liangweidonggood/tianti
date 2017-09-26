@@ -10,7 +10,8 @@ if (window.location.protocol == "file:") {
     }
 }
 else {
-    window.ctx = window.location.protocol + "//" + window.location.host + "/tianti-module-gateway/";
+    //window.ctx = window.location.protocol + "//" + window.location.host + "/tianti-module-gateway/";
+    window.ctx = window.location.protocol + "//" + window.location.host + "/";
 }
 
 
@@ -18,10 +19,11 @@ window.root = window.ctx + "tianti/";
 window.static = window.ctx + "static/";
 window.notImgUrl = window.static + "images/img_null.png";
 
-window.server = "http://127.0.0.1:8001/";//接口地址项目（tianti-module-interface）部署（以用户自己实际情况来定）
-window.serverPath = window.server + "tianti-module-interface/";
+window.server = "http://192.168.1.108:8081/";//接口地址项目（tianti-module-interface）部署（以用户自己实际情况来定）
+//window.serverPath = window.server + "tianti-module-interface/";
+window.serverPath = window.server + "/";
 //后台上传的图片地址
-window.serverUploadPath = "http://127.0.0.1:8002/tianti-module-admin"
+window.serverUploadPath = "http://192.168.1.108:8080";
 
 jc.require.url.push(window.static + "js/jquery.pagination.js");
 jc.require.url.push(window.static + "js/jquery.nicescroll.min.js");

@@ -302,15 +302,18 @@
 			'width' : 70,
 			'height' : 20,
 			'uploadLimit':3,
+            'onFallback':function(){
+                alert("您未安装FLASH控件，无法上传图片！请安装FLASH控件后再试。");
+            },
 			'onUploadSuccess' : function(file, data, response) {
 					if(data != null){
-						var attachUrl = '${pageContext.request.contextPath}' + data;								
+						var attachUrl = '${pageContext.request.contextPath}' + data;
 						$("#attachURL").attr('src',attachUrl); 
 						$("#coverImageUrl").val(data);
 					}
-		 }
+			 }
 	   });
-	   
+
 	   $('input[name="articleType"]').on('click', function(){
 			var val = $('input[name="articleType"]:checked').val();
 			if(val == 'contentType'){
